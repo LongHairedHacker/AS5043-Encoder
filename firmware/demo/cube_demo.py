@@ -13,6 +13,7 @@ ERROR: PyOpenGL not installed properly.
 
 import serial
 
+SERIAL = '/dev/ttyUSB0'
 
 angle = 0
 pos = 0
@@ -53,7 +54,7 @@ def idle():
    while len(line) == 0:
      ser.write("a")
      line = ser.readline()
-     
+
    angle = int(line[:-2])
    print "angle: %d" % angle
 
@@ -63,7 +64,7 @@ def idle():
 
 
 
-ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=0.032)
+ser = serial.Serial(SERIAL, 9600, timeout=0.032)
 if not ser:
   print "Unable to open serial port"
   sys.exit(1)
