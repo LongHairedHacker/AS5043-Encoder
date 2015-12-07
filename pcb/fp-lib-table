@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name he10-lock)(type Legacy)(uri "$(KIPRJMOD)/lib/he10-lock.mod")(options "")(descr ""))
+  (lib (name lib)(type KiCad)(uri "$(KIPRJMOD)/lib")(options "")(descr ""))
+)
