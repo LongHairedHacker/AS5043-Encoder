@@ -24,12 +24,12 @@ OBJ += $(LIBS:%=$(OBJDIR)/$(AVRMCU)/libs/%.o)
 
 
 CFLAGS = -Os -Wall -Wstrict-prototypes
-#CFLAGS += -ffunction-sections -fdata-sections
+CFLAGS += -ffunction-sections -fdata-sections
 CFLAGS += -fshort-enums -fpack-struct -funsigned-char -funsigned-bitfields
 CFLAGS += -I . -I $(LIB_DIR)/include
 CFLAGS += -mmcu=$(AVRMCU) -DF_CPU=$(F_CPU)UL -DVERSION=$(VERSION)
 
-LDFLAGS = #-Wl,--print-gc-sections,--gc-sections
+LDFLAGS = -mmcu=$(AVRMCU) -Wl,--gc-sections
 
 all: start $(OBJDIR)/$(AVRMCU)/$(TARGET).hex size
 	@echo ":: Done !"
@@ -49,7 +49,7 @@ $(OBJDIR)/$(AVRMCU)/%.o : %.c $(HEADERS) $(LIB_HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR)/$(AVRMCU)/$(TARGET).elf : $(OBJ)
-	$(CC) $+ -o $@
+	$(CC) $(LDFLAGS) $+ -o $@
 
 $(OBJDIR)/$(AVRMCU)/$(TARGET).hex : $(OBJDIR)/$(AVRMCU)/$(TARGET).elf
 	$(OBJCOPY) -O ihex $< $@
