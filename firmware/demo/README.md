@@ -20,8 +20,8 @@ The makefile takes 3 optional parameters:
 
  If you want to run the code on your Arduino try:
  ```
- make AVRMCU=atmega32p ISPPORT=/dev/ttyACM0
- make AVRMCU=atmega32p ISPPORT=/dev/ttyACM0 flash
+ make AVRMCU=atmega328p ISPPORT=/dev/ttyACM0
+ make AVRMCU=atmega328p ISPPORT=/dev/ttyACM0 flash
  ```
 
 Afterwards connect the encoder and start a terminal emulator of your choice on your serial interface.
