@@ -1,6 +1,6 @@
 AVRMCU ?= atmega8
 F_CPU ?= 16000000
-ISPPORT ?= /dev/ttyACM0
+ISPPORT ?= /dev/ttyUSB0
 
 VERSION = 0.1
 
@@ -63,9 +63,9 @@ clean :
 	@rm -rf $(OBJDIR)
 
 flash : all
-	avrdude -c arduino \
-		-p $(AVRMCU) -P $(ISPPORT) \
-        -U flash:w:$(OBJDIR)/$(TARGET).hex
+		avrdude -c arduino \
+			-p $(AVRMCU) -P $(ISPPORT) \
+	        -U flash:w:$(OBJDIR)/$(AVRMCU)/$(TARGET).hex
 
 test : flash
 	screen $(ISPPORT) 38400

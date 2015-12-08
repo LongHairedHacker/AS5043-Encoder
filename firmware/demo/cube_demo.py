@@ -64,7 +64,7 @@ def idle():
 
 
 
-ser = serial.Serial(SERIAL, 9600, timeout=0.032)
+ser = serial.Serial(SERIAL, 38400, timeout=0.032)
 if not ser:
   print "Unable to open serial port"
   sys.exit(1)

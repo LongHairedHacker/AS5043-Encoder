@@ -5,7 +5,7 @@
 #include "AS5043.h"
 #include "uart.h"
 
-const uint8_t degree_mode = 0;
+const uint8_t degree_mode = 1;
 
 int main(void) {
 
