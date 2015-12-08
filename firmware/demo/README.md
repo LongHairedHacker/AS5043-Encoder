@@ -35,14 +35,14 @@ It might be necessary to change the SERIAL constant on line 16 to the correct in
 Connecting the encoder
 ----------------------
 
-Simply onnect the encoder according to the following table:
+Simply connect the encoder according to the following table:
 
-| AS5043 | AVR        | Arduino        |
-|--------|------------|----------------|
-| PROG   | GND        | GND            |
-| DO     | PB4 (MISO) | digital pin 12 |
-| CLK    | PB5 (SCK)  | digital pin 13 |
-| CS     | PB2 (SS)   | digital pin 10 |
-| MODE   | GND        | GND            |
-| VDD5V  | +5v        | +5v            |
-| VSS    | GND        | GND            |
+| AS5043 | Breakout Pin | AVR        | Arduino        |
+|--------|--------------|------------|----------------|
+| PROG   | 1            | GND        | GND            |
+| DO     | 3            | PB4 (MISO) | digital pin 12 |
+| CLK    | 5            | PB5 (SCK)  | digital pin 13 |
+| CS     | 7            | PB2 (SS)   | digital pin 10 |
+| MODE   | 9            | GND        | GND            |
+| VDD5V  | 2            | +5v        | +5v            |
+| VSS    | 4            | GND        | GND            |
